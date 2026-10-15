@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // 1. Sticky Navbar Effect
 function initNavbar() {
   const navbar = document.getElementById('navbar');
+  if (!navbar) return;
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       navbar.classList.add('scrolled');
@@ -35,7 +36,6 @@ function initMobileMenu() {
     navLinks.classList.toggle('active');
   });
 
-  // Close menu on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
@@ -80,7 +80,6 @@ function initScrollReveal() {
 
 // 4. 3D Tilt Card Effect
 function initTiltCards() {
-  // Only apply tilt on non-touch devices
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     const cards = document.querySelectorAll('.tilt-card');
     cards.forEach(card => {
@@ -90,8 +89,8 @@ function initTiltCards() {
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
       });
 
@@ -111,8 +110,8 @@ function initProfitCalculator() {
 
   if (!slider || !valDisplay || !monthlyDisplay) return;
 
-  const averageTicket = 110.0; // R$ 110 por semijoia média
-  const commissionRate = 0.40; // 40% comissão líquida
+  const averageTicket = 110.0;
+  const commissionRate = 0.40;
   const weeksPerMonth = 4.0;
 
   function update() {
@@ -143,15 +142,17 @@ function initFaqAccordion() {
   items.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
     const content = item.querySelector('.faq-content');
+    if (!trigger || !content) return;
 
     trigger.addEventListener('click', () => {
       const isOpen = item.classList.contains('active');
 
-      // Close all others
       items.forEach(other => {
         other.classList.remove('active');
-        other.querySelector('.faq-content').style.maxHeight = null;
-        other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        const otherContent = other.querySelector('.faq-content');
+        if (otherContent) otherContent.style.maxHeight = null;
+        const otherTrigger = other.querySelector('.faq-trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
       });
 
       if (!isOpen) {
@@ -160,5 +161,117 @@ function initFaqAccordion() {
         trigger.setAttribute('aria-expanded', 'true');
       }
     });
+  });
+}
+
+// 7. Catalog Carousel Navigation
+function initCatalogCarousel() {
+  const track = document.getElementById('catalogTrack');
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function getScrollAmount() {
+    const firstSlide = track.querySelector('.catalog-slide');
+    if (!firstSlide) return 320;
+    return firstSlide.offsetWidth + 24;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+}
+
+// 8. Jewelry Modal Lightbox with Arrows & Keyboard support
+function initJewelryModal() {
+  const modal = document.getElementById('jewelryModal');
+  const closeBtn = document.getElementById('modalCloseBtn');
+  const prevBtn = document.getElementById('modalPrevBtn');
+  const nextBtn = document.getElementById('modalNextBtn');
+  const modalImg = document.getElementById('modalImg');
+  const modalCounter = document.getElementById('modalCounter');
+  const modalBadge = document.getElementById('modalBadge');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalCta = document.getElementById('modalWhatsAppCta');
+
+  const slides = document.querySelectorAll('.catalog-slide');
+  if (!modal || !slides.length) return;
+
+  let currentIndex = 0;
+
+  function loadSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    currentIndex = index;
+
+    const slide = slides[currentIndex];
+    const title = slide.getAttribute('data-title') || '';
+    const badge = slide.getAttribute('data-badge') || '';
+    const desc = slide.getAttribute('data-desc') || '';
+    const img = slide.getAttribute('data-img') || '';
+
+    if (modalImg) {
+      modalImg.src = img;
+      modalImg.alt = title;
+    }
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalBadge) modalBadge.textContent = badge;
+    if (modalDesc) modalDesc.textContent = desc;
+    if (modalCounter) modalCounter.textContent = `${currentIndex + 1} de ${slides.length}`;
+
+    if (modalCta) {
+      const msg = encodeURIComponent(`Olá! Vi a peça "${title}" no site da Atual Semijoias e gostaria de saber se ela está disponível na maleta consignada!`);
+      modalCta.href = `https://wa.me/556792574305?text=${msg}`;
+    }
+  }
+
+  function openModal(index) {
+    loadSlide(index);
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  slides.forEach((slide, idx) => {
+    slide.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openModal(idx);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeModal();
+  });
+  if (prevBtn) prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    loadSlide(currentIndex - 1);
+  });
+  if (nextBtn) nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    loadSlide(currentIndex + 1);
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') loadSlide(currentIndex - 1);
+    if (e.key === 'ArrowRight') loadSlide(currentIndex + 1);
   });
 }
