@@ -3,7 +3,7 @@
    Exact Palette:
    - Primary Slate Navy: #2a3344 (extracted directly from logo.jpg)
    - Deep Background: #1a202c & #212936
-   - Brand Royal Gold: #f3c000, #fedd64, #c59628
+   - Brand Royal Gold: #f3c000, #f5efe6, #c59628
    - Accent Marsala/Burgundy: #501d19 (from official campaign ribbons)
    ============================================================ */
 
@@ -16,12 +16,14 @@
   --bg-card-hover: rgba(54, 65, 86, 0.9);
 
   --gold-primary: #f3c000;
-  --gold-light: #fedd64;
+  --gold-light: #f5efe6; /* Bege off-white refinado */
+  --beige-offwhite: #f5efe6;
+  --beige-light: #faf6f0;
   --gold-dark: #b88a38;
   --gold-glow: rgba(243, 192, 0, 0.38);
 
-  --gold-gradient: linear-gradient(135deg, #fedd64 0%, #f3c000 50%, #c59628 100%);
-  --gold-gradient-hover: linear-gradient(135deg, #ffffff 0%, #fedd64 45%, #f3c000 100%);
+  --gold-gradient: linear-gradient(135deg, #f5efe6 0%, #f3c000 55%, #c59628 100%);
+  --gold-gradient-hover: linear-gradient(135deg, #ffffff 0%, #f5efe6 45%, #f3c000 100%);
 
   --marsala-brand: #501d19;
   --marsala-light: #732a24;
@@ -29,7 +31,7 @@
 
   --text-main: #f8fafc;
   --text-muted: #cbd5e1;
-  --text-gold: #fedd64;
+  --text-gold: #f5efe6;
 
   --border-subtle: rgba(255, 255, 255, 0.09);
   --border-gold: rgba(243, 192, 0, 0.3);
@@ -141,7 +143,7 @@ body {
   background: var(--marsala-gradient);
   color: #ffffff;
   font-weight: 600;
-  border: 1px solid rgba(254, 221, 100, 0.3);
+  border: 1px solid rgba(245, 239, 230, 0.3);
   box-shadow: 0 10px 25px -5px rgba(80, 29, 25, 0.5);
 }
 
