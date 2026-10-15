@@ -166,24 +166,81 @@ function initFaqAccordion() {
 
 // 7. Catalog Carousel Navigation
 function initCatalogCarousel() {
-  const track = document.getElementById('catalogTrack');
+  const container = document.getElementById('catalogCarousel');
   const prevBtn = document.getElementById('carouselPrevBtn');
   const nextBtn = document.getElementById('carouselNextBtn');
 
-  if (!track || !prevBtn || !nextBtn) return;
+  if (!container || !prevBtn || !nextBtn) return;
 
-  function getScrollAmount() {
-    const firstSlide = track.querySelector('.catalog-slide');
-    if (!firstSlide) return 320;
-    return firstSlide.offsetWidth + 24;
+  function getStep() {
+    const firstSlide = container.querySelector('.catalog-slide');
+    if (!firstSlide) return 340;
+    // Calculate full width of slide + gap
+    const style = window.getComputedStyle(firstSlide);
+    const margin = parseFloat(style.marginRight) || 0;
+    return firstSlide.getBoundingClientRect().width + 24;
   }
 
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const step = getStep();
+    if (container.scrollLeft <= 15) {
+      // Loop smoothly to end
+      container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: -step, behavior: 'smooth' });
+    }
   });
 
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const step = getStep();
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (container.scrollLeft >= maxScroll - 20) {
+      // Loop smoothly to beginning
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: step, behavior: 'smooth' });
+    }
+  });
+
+  // Smooth drag-to-scroll support for desktop
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let dragged = false;
+
+  container.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    isDown = true;
+    dragged = false;
+    startX = e.pageX - container.offsetLeft;
+    scrollStart = container.scrollLeft;
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!isDown) return;
+    isDown = false;
+    setTimeout(() => { dragged = false; }, 50);
+  });
+
+  container.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const x = e.pageX - container.offsetLeft;
+    const walk = x - startX;
+    if (Math.abs(walk) > 6) {
+      dragged = true;
+      container.scrollLeft = scrollStart - walk;
+    }
+  });
+
+  // Prevent opening modal if user was dragging
+  container.querySelectorAll('.catalog-slide').forEach(slide => {
+    slide.addEventListener('click', (e) => {
+      if (dragged) {
+        e.stopImmediatePropagation();
+      }
+    }, true);
   });
 }
 
