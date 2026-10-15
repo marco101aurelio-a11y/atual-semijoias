@@ -6,31 +6,33 @@
   <title>Atual Semijoias | Revenda 100% Consignada • Sem Investimento</title>
   <meta name="description" content="Conquiste sua renda extra com a Atual Semijoias. Maleta completa em consignação, sem investimento inicial, semijoias hipoalergênicas com garantia e até 40% de comissão.">
   <meta name="keywords" content="semijoias consignadas, revenda semijoias, maleta de semijoias, revendedora semijoias campo grande ms, renda extra semijoias">
-  <meta name="theme-color" content="#0b0f17">
+  <meta name="theme-color" content="#2a3344">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Atual Semijoias | Revenda 100% Consignada">
   <meta property="og:description" content="Receba sua maleta de semijoias finas sem pagar nada adiantado. Lucro de até 40% e peças com garantia.">
-  <meta property="og:image" content="assets/logo.svg">
+  <meta property="og:image" content="assets/images/logo.jpg">
   <meta property="og:type" content="website">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
 </head>
 <body>
 
+  <!-- Ambient Light Orbs -->
   <div class="ambient-glow glow-top" aria-hidden="true"></div>
   <div class="ambient-glow glow-gold" aria-hidden="true"></div>
 
+  <!-- Header / Navigation -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="brand-link" aria-label="Atual Semijoias Home">
-        <div class="logo-wrapper">
-          <img src="assets/logo.svg" alt="Atual Semijoias" class="brand-logo" width="48" height="48">
-        </div>
+        <img src="assets/images/logo.jpg" alt="Atual Semijoias" class="brand-logo-img" width="46" height="46">
         <div class="brand-text">
           <span class="brand-name">atual</span>
           <span class="brand-sub">SEMIJOIAS</span>
@@ -80,8 +82,8 @@
           </h1>
 
           <p class="hero-description" data-reveal="fade-up" data-delay="200">
-            Receba em casa uma <strong>maleta completa</strong> com peças finas banhadas a ouro 18k e prata, 
-            antialérgicas e com garantia. <strong>Você não compra nada antecipado:</strong> venda para suas amigas, 
+            Receba em casa uma <strong>maleta exclusiva</strong> com peças finas banhadas a ouro 18k e prata, 
+            antialérgicas e com garantia. <strong>Você não compra nada adiantado:</strong> venda para suas amigas, 
             fique com até <strong>40% de lucro líquido</strong> e devolva o que não vender.
           </p>
 
@@ -102,6 +104,7 @@
             </a>
           </div>
 
+          <!-- Trust Badges Row -->
           <div class="hero-trust-row" data-reveal="fade-up" data-delay="400">
             <div class="trust-item">
               <span class="trust-icon">🛡️</span>
@@ -129,25 +132,29 @@
           </div>
         </div>
 
+        <!-- Hero 3D Card / Real Video Showcase -->
         <div class="hero-visual" data-reveal="zoom-in" data-delay="200">
           <div class="showcase-card tilt-card" id="heroTiltCard">
-            <div class="card-glass-shine"></div>
-            
             <div class="showcase-badge-top">
               <span class="dot-online"></span>
-              <span>Maleta Mostruário VIP</span>
+              <span>Coleção em Destaque</span>
             </div>
 
-            <div class="jewel-frame">
-              <div class="jewel-sparkle-bg"></div>
-              <img src="assets/logo.svg" alt="Atual Semijoias Selo Ouro" class="jewel-hero-logo">
-              <div class="jewel-ring-circle"></div>
+            <!-- Real Video Element -->
+            <div class="hero-video-box">
+              <video class="hero-collection-video" autoplay muted loop playsinline poster="assets/images/4.jpg">
+                <source src="assets/images/video1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+              </video>
+              <div class="video-overlay-pill">
+                <span>📹 Vídeo Real do Mostruário</span>
+              </div>
             </div>
 
             <div class="showcase-details">
-              <div class="showcase-tag">COLEÇÃO EXCLUSIVA CONSIGNADA</div>
-              <h3 class="showcase-title">Maleta Veludo Executiva</h3>
-              <p class="showcase-subtitle">Mais de 60 a 90 peças selecionadas a dedo entre colares, anéis, brincos e pulseiras de alto giro.</p>
+              <div class="showcase-tag">UMA COLEÇÃO DE HISTÓRIAS</div>
+              <h3 class="showcase-title">Maleta Veludo Luxo</h3>
+              <p class="showcase-subtitle">Peças selecionadas a dedo: colares, anéis, brincos e pulseiras com brilho espelhado e acabamento refinado.</p>
               
               <div class="showcase-stats-grid">
                 <div class="stat-box">
@@ -165,6 +172,7 @@
               </div>
             </div>
 
+            <!-- Floating 3D Micro Badges -->
             <div class="floating-badge badge-1">
               <span class="badge-icon">💰</span>
               <div class="badge-text">
@@ -176,13 +184,47 @@
             <div class="floating-badge badge-2">
               <span class="badge-icon">💎</span>
               <div class="badge-text">
-                <span class="b-title">Design Fino</span>
+                <span class="b-title">Design Exclusivo</span>
                 <span class="b-val">Zircônias & Cristais</span>
               </div>
             </div>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- SECTION: CAMPAIGN FEATURE BANNERS (Real Images 7.jpg and 4.jpg) -->
+    <section class="campaign-banner-section">
+      <div class="campaign-grid">
+        <div class="campaign-card tilt-card" data-reveal="fade-up" data-delay="100">
+          <img src="assets/images/7.jpg" alt="Vem ser uma revendedora Atual Semijoias" class="campaign-img">
+          <div class="campaign-overlay">
+            <span class="campaign-tag">OPÇÃO 01 • RENDA EXTRA</span>
+            <h3 class="campaign-title">Vem ser uma revendedora!</h3>
+            <p class="section-desc">Lucros atrativos, flexibilidade e peças que encantam suas clientes.</p>
+            <div>
+              <a href="https://wa.me/556792574305?text=Ol%C3%A1!%20Vi%20a%20campanha%20no%20site%20e%20quero%20ser%20uma%20revendedora%20da%20Atual%20Semijoias!" 
+                 target="_blank" rel="noopener noreferrer" class="btn btn-marsala">
+                <span>Quero ser uma Revendedora →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="campaign-card tilt-card" data-reveal="fade-up" data-delay="200">
+          <img src="assets/images/4.jpg" alt="Quer uma renda extra ou só brilhar? Atual Semijoias" class="campaign-img">
+          <div class="campaign-overlay">
+            <span class="campaign-tag">MAIS QUE SEMIJOIAS</span>
+            <h3 class="campaign-title">Quer uma renda extra ou só brilhar?</h3>
+            <p class="section-desc">Peças atemporais com acabamento de alta joalheria para você revender.</p>
+            <div>
+              <a href="#vitrine" class="btn btn-glass">
+                <span>Ver Coleção de Peças</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -323,60 +365,102 @@
       </div>
     </section>
 
-    <!-- SECTION 4: VITRINE / CATEGORIAS -->
+    <!-- SECTION 4: VITRINE / REAL JEWELRY SHOWCASE -->
     <section class="section-container" id="vitrine">
       <div class="section-header" data-reveal="fade-up">
-        <span class="section-tag">CATÁLOGO & MOSTRUÁRIO</span>
-        <h2 class="section-title">Peças Desejadas com <span class="text-gold-gradient">Giro Rápido</span></h2>
-        <p class="section-desc">Linhas completas pensadas para todos os estilos: do minimalista para o dia a dia até o luxo exuberante para festas.</p>
+        <span class="section-tag">CATÁLOGO & MOSTRUÁRIO REAL</span>
+        <h2 class="section-title">Peças Desejadas com <span class="text-gold-gradient">Giro Imediato</span></h2>
+        <p class="section-desc">Confira fotos reais de peças que compõem os mostruários da Atual Semijoias.</p>
       </div>
 
       <div class="catalog-grid">
+        <!-- Item 1: Flower Pendant 1.jpg -->
         <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="100">
           <div class="cat-image-box">
-            <div class="cat-icon-badge">📿</div>
-            <div class="cat-glow"></div>
+            <img src="assets/images/1.jpg" alt="Pingente Flor Cristais Coloridos Cravejados" class="cat-real-img" loading="lazy">
+            <span class="cat-image-badge">✨ Alta Joalheria</span>
           </div>
           <div class="cat-content">
-            <span class="cat-badge">Mais Vendidos</span>
-            <h3 class="cat-title">Colares & Gargantilhas</h3>
-            <p class="cat-text">Chokers, pontos de luz em zircônia, correntaria refinada e escapulários folheados com brilho espelhado.</p>
+            <div>
+              <span class="cat-badge">Linha Pedrarias Nobres</span>
+              <h3 class="cat-title">Pingente Flor com Cristais</h3>
+              <p class="cat-text">Gargantilha banhada a ouro com pingente floral cravejado de cristais facetados coloridos e zircônia central.</p>
+            </div>
           </div>
         </div>
 
+        <!-- Item 2: Model 2.jpg -->
         <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="200">
           <div class="cat-image-box">
-            <div class="cat-icon-badge">✨</div>
-            <div class="cat-glow"></div>
+            <img src="assets/images/2.jpg" alt="Coleção Trevos e Solitários" class="cat-real-img" loading="lazy">
+            <span class="cat-image-badge">💎 Tendência 2026</span>
           </div>
           <div class="cat-content">
-            <span class="cat-badge">Tendência</span>
-            <h3 class="cat-title">Brincos & Argolas</h3>
-            <p class="cat-text">Argolas cravejadas, brincos ear cuff, modelos casuais e peças com pedrarias lapidadas antialérgicas.</p>
+            <div>
+              <span class="cat-badge">Combinação Perfeita</span>
+              <h3 class="cat-title">Mix Trevo & Riviera</h3>
+              <p class="cat-text">Choker riviera com corrente de trevos e anel solitário clássico. Peças que compõem o visual ideal para qualquer ocasião.</p>
+            </div>
           </div>
         </div>
 
+        <!-- Item 3: Girl Pendant 3.jpg -->
         <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="300">
           <div class="cat-image-box">
-            <div class="cat-icon-badge">💍</div>
-            <div class="cat-glow"></div>
+            <img src="assets/images/3.jpg" alt="Colar Pingente Menina Cravejado de Zircônias" class="cat-real-img" loading="lazy">
+            <span class="cat-image-badge">❤️ Linha Filhos</span>
           </div>
           <div class="cat-content">
-            <span class="cat-badge">Alta Procura</span>
-            <h3 class="cat-title">Anéis & Solitários</h3>
-            <p class="cat-text">Solitários clássicos, anéis aparadores, peças reguláveis e modelos com banho triplo e pedras micro-cravejadas.</p>
+            <div>
+              <span class="cat-badge">Mais Vendidos</span>
+              <h3 class="cat-title">Gargantilha Filha (Menina)</h3>
+              <p class="cat-text">Corrente veneziana banhada a ouro com pingente delicado de menina cravejado com micro-zircônias brilhantes.</p>
+            </div>
           </div>
         </div>
 
+        <!-- Item 4: Boy Pendant 6.jpg -->
         <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="400">
           <div class="cat-image-box">
-            <div class="cat-icon-badge">💫</div>
-            <div class="cat-glow"></div>
+            <img src="assets/images/6.jpg" alt="Colar Pingente Menino Cravejado de Zircônias" class="cat-real-img" loading="lazy">
+            <span class="cat-image-badge">💙 Linha Filhos</span>
           </div>
           <div class="cat-content">
-            <span class="cat-badge">Elegância</span>
-            <h3 class="cat-title">Pulseiras & Braceletes</h3>
-            <p class="cat-text">Pulseiras rivieras deslumbrantes, braceletes rígidos em ouro e elos modernos para combinações cheias de estilo.</p>
+            <div>
+              <span class="cat-badge">Mais Vendidos</span>
+              <h3 class="cat-title">Gargantilha Filho (Menino)</h3>
+              <p class="cat-text">Pingente de menino cravejado em pedrarias lapidadas, perfeito para mães apaixonadas. Alto giro de vendas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Rings & Bracelets 5.jpg -->
+        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="500">
+          <div class="cat-image-box">
+            <img src="assets/images/5.jpg" alt="Anéis cravejados, brincos gota e pulseiras em ouro" class="cat-real-img" loading="lazy">
+            <span class="cat-image-badge">👑 Linha Glamour</span>
+          </div>
+          <div class="cat-content">
+            <div>
+              <span class="cat-badge">Elegância Pura</span>
+              <h3 class="cat-title">Anel Pavé & Brinco Gota</h3>
+              <p class="cat-text">Anel regulável anatômico com pavê de zircônias, brinco gota espelhada e bracelete com elos encorpados.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: Campaign Box 7.jpg -->
+        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="600">
+          <div class="cat-image-box">
+            <img src="assets/images/7.jpg" alt="Caixa e fita personalizada da Atual Semijoias" class="cat-real-img" loading="lazy">
+            <span class="cat-image-badge">🎁 Embalagem Luxo</span>
+          </div>
+          <div class="cat-content">
+            <div>
+              <span class="cat-badge">Apresentação Impecável</span>
+              <h3 class="cat-title">Experiência Completa</h3>
+              <p class="cat-text">Cada peça acompanha o padrão de embalagem, tags de garantia e fita personalizada que valorizam ainda mais a sua revenda.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -607,7 +691,7 @@
     <div class="footer-container">
       <div class="footer-brand-col">
         <div class="footer-brand">
-          <img src="assets/logo.svg" alt="Atual Semijoias" width="44" height="44">
+          <img src="assets/images/logo.jpg" alt="Atual Semijoias" class="footer-brand-logo-img" width="44" height="44">
           <div>
             <span class="f-brand-name">atual</span>
             <span class="f-brand-sub">SEMIJOIAS</span>
@@ -672,6 +756,7 @@
     </div>
   </footer>
 
+  <!-- Floating WhatsApp Action Button -->
   <aside class="floating-whatsapp" aria-label="Atendimento Rápido no WhatsApp">
     <a href="https://wa.me/556792574305?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20minha%20maleta%20consignada." 
        target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" id="floatingWhatsappBtn" title="Falar no WhatsApp">
