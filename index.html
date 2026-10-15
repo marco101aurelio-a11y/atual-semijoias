@@ -135,10 +135,7 @@
         <!-- Hero 3D Card / Real Video Showcase -->
         <div class="hero-visual" data-reveal="zoom-in" data-delay="200">
           <div class="showcase-card tilt-card" id="heroTiltCard">
-            <div class="showcase-badge-top">
-              <span class="dot-online"></span>
-              <span>Coleção em Destaque</span>
-            </div>
+            
 
             <!-- Real Video Element -->
             <div class="hero-video-box">
@@ -146,9 +143,7 @@
                 <source src="assets/images/video1.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
               </video>
-              <div class="video-overlay-pill">
-                <span>📹 Vídeo Real do Mostruário</span>
-              </div>
+              
             </div>
 
             <div class="showcase-details">
@@ -173,21 +168,9 @@
             </div>
 
             <!-- Floating 3D Micro Badges -->
-            <div class="floating-badge badge-1">
-              <span class="badge-icon">💰</span>
-              <div class="badge-text">
-                <span class="b-title">Lucro Médio</span>
-                <span class="b-val">+R$ 2.400/mês</span>
-              </div>
-            </div>
+            
 
-            <div class="floating-badge badge-2">
-              <span class="badge-icon">💎</span>
-              <div class="badge-text">
-                <span class="b-title">Design Exclusivo</span>
-                <span class="b-val">Zircônias & Cristais</span>
-              </div>
-            </div>
+            
           </div>
         </div>
 
@@ -209,7 +192,7 @@
           </div>
           <div class="campaign-footer-cta">
             <a href="https://wa.me/556792574305?text=Ol%C3%A1!%20Vi%20a%20campanha%20no%20site%20e%20quero%20ser%20uma%20revendedora%20da%20Atual%20Semijoias!" 
-               target="_blank" rel="noopener noreferrer" class="btn btn-marsala btn-block">
+               target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block">
               <span>Quero ser uma Revendedora →</span>
             </a>
           </div>
@@ -327,8 +310,6 @@
           <p class="step-desc">Fale com nossa equipe pelo WhatsApp. Fazemos uma análise rápida e sem burocracia dos seus dados para liberar seu mostruário.</p>
         </div>
 
-        <div class="step-connector" aria-hidden="true"></div>
-
         <div class="step-card" data-reveal="fade-up" data-delay="200">
           <div class="step-number-pill">02</div>
           <div class="step-icon">📦</div>
@@ -336,16 +317,12 @@
           <p class="step-desc">Você recebe uma maleta aveludada elegante, etiquetada com preços sugeridos e recheada com as semijoias mais procuradas.</p>
         </div>
 
-        <div class="step-connector" aria-hidden="true"></div>
-
         <div class="step-card" data-reveal="fade-up" data-delay="300">
           <div class="step-number-pill">03</div>
           <div class="step-icon">✨</div>
           <h3 class="step-title">Mostre e Encante</h3>
           <p class="step-desc">Apresente para familiares, amigas, colegas e contatos. As peças brilham por si só e geram desejo imediato de compra.</p>
         </div>
-
-        <div class="step-connector" aria-hidden="true"></div>
 
         <div class="step-card" data-reveal="fade-up" data-delay="400">
           <div class="step-number-pill">04</div>
@@ -366,106 +343,167 @@
       </div>
     </section>
 
-    <!-- SECTION 4: VITRINE / REAL JEWELRY SHOWCASE -->
+    <!-- SECTION 4: VITRINE / REAL JEWELRY SHOWCASE CAROUSEL -->
     <section class="section-container" id="vitrine">
       <div class="section-header" data-reveal="fade-up">
         <span class="section-tag">CATÁLOGO & MOSTRUÁRIO REAL</span>
         <h2 class="section-title">Peças Desejadas com <span class="text-gold-gradient">Giro Imediato</span></h2>
-        <p class="section-desc">Confira fotos reais de peças que compõem os mostruários da Atual Semijoias.</p>
+        <p class="section-desc">Toque em qualquer peça para abrir a visualização em tela cheia com navegação por setas.</p>
       </div>
 
-      <div class="catalog-grid">
-        <!-- Item 1: Flower Pendant 1.jpg -->
-        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="100">
-          <div class="cat-image-box">
-            <img src="assets/images/1.jpg" alt="Pingente Flor Cristais Coloridos Cravejados" class="cat-real-img" loading="lazy">
-            <span class="cat-image-badge">✨ Alta Joalheria</span>
-          </div>
-          <div class="cat-content">
-            <div>
-              <span class="cat-badge">Linha Pedrarias Nobres</span>
-              <h3 class="cat-title">Pingente Flor com Cristais</h3>
-              <p class="cat-text">Gargantilha banhada a ouro com pingente floral cravejado de cristais facetados coloridos e zircônia central.</p>
-            </div>
-          </div>
+      <!-- Carousel Navigation Header -->
+      <div class="carousel-nav-bar" data-reveal="fade-up">
+        <span class="carousel-counter" id="carouselCounter">Coleção com 6 Destaques Exclusivos</span>
+        <div class="carousel-arrow-buttons">
+          <button class="carousel-arrow-btn" id="carouselPrevBtn" aria-label="Ver anterior">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="carousel-arrow-btn" id="carouselNextBtn" aria-label="Ver próximo">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
         </div>
+      </div>
 
-        <!-- Item 2: Model 2.jpg -->
-        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="200">
-          <div class="cat-image-box">
-            <img src="assets/images/2.jpg" alt="Coleção Trevos e Solitários" class="cat-real-img" loading="lazy">
-            <span class="cat-image-badge">💎 Tendência 2026</span>
-          </div>
-          <div class="cat-content">
-            <div>
-              <span class="cat-badge">Combinação Perfeita</span>
-              <h3 class="cat-title">Mix Trevo & Riviera</h3>
-              <p class="cat-text">Choker riviera com corrente de trevos e anel solitário clássico. Peças que compõem o visual ideal para qualquer ocasião.</p>
+      <!-- Carousel Track Container -->
+      <div class="catalog-carousel-container" id="catalogCarousel" data-reveal="fade-up">
+        <div class="catalog-carousel-track" id="catalogTrack">
+          
+          <!-- Item 1: Flower Pendant 1.jpg -->
+          <div class="catalog-card catalog-slide" data-index="0" data-title="Pingente Flor com Cristais" data-badge="Linha Pedrarias Nobres" data-desc="Gargantilha banhada a ouro com pingente floral cravejado de cristais facetados coloridos e zircônia central." data-img="assets/images/1.jpg">
+            <div class="cat-image-box">
+              <img src="assets/images/1.jpg" alt="Pingente Flor Cristais Coloridos Cravejados" class="cat-real-img" loading="lazy">
+              <span class="cat-image-badge">✨ Alta Joalheria</span>
+              <div class="cat-zoom-hint">🔍 Toque para ampliar</div>
+            </div>
+            <div class="cat-content">
+              <div>
+                <span class="cat-badge">Linha Pedrarias Nobres</span>
+                <h3 class="cat-title">Pingente Flor com Cristais</h3>
+                <p class="cat-text">Gargantilha banhada a ouro com pingente floral cravejado de cristais facetados coloridos.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Item 3: Girl Pendant 3.jpg -->
-        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="300">
-          <div class="cat-image-box">
-            <img src="assets/images/3.jpg" alt="Colar Pingente Menina Cravejado de Zircônias" class="cat-real-img" loading="lazy">
-            <span class="cat-image-badge">❤️ Linha Filhos</span>
-          </div>
-          <div class="cat-content">
-            <div>
-              <span class="cat-badge">Mais Vendidos</span>
-              <h3 class="cat-title">Gargantilha Filha (Menina)</h3>
-              <p class="cat-text">Corrente veneziana banhada a ouro com pingente delicado de menina cravejado com micro-zircônias brilhantes.</p>
+          <!-- Item 2: Model 2.jpg -->
+          <div class="catalog-card catalog-slide" data-index="1" data-title="Mix Trevo & Riviera" data-badge="Combinação Perfeita" data-desc="Choker riviera com corrente de trevos e anel solitário clássico. Peças que compõem o visual ideal para qualquer ocasião." data-img="assets/images/2.jpg">
+            <div class="cat-image-box">
+              <img src="assets/images/2.jpg" alt="Coleção Trevos e Solitários" class="cat-real-img" loading="lazy">
+              <span class="cat-image-badge">💎 Tendência 2026</span>
+              <div class="cat-zoom-hint">🔍 Toque para ampliar</div>
+            </div>
+            <div class="cat-content">
+              <div>
+                <span class="cat-badge">Combinação Perfeita</span>
+                <h3 class="cat-title">Mix Trevo & Riviera</h3>
+                <p class="cat-text">Choker riviera com corrente de trevos e anel solitário clássico em ouro.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Item 4: Boy Pendant 6.jpg -->
-        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="400">
-          <div class="cat-image-box">
-            <img src="assets/images/6.jpg" alt="Colar Pingente Menino Cravejado de Zircônias" class="cat-real-img" loading="lazy">
-            <span class="cat-image-badge">💙 Linha Filhos</span>
-          </div>
-          <div class="cat-content">
-            <div>
-              <span class="cat-badge">Mais Vendidos</span>
-              <h3 class="cat-title">Gargantilha Filho (Menino)</h3>
-              <p class="cat-text">Pingente de menino cravejado em pedrarias lapidadas, perfeito para mães apaixonadas. Alto giro de vendas.</p>
+          <!-- Item 3: Girl Pendant 3.jpg -->
+          <div class="catalog-card catalog-slide" data-index="2" data-title="Gargantilha Filha (Menina)" data-badge="Linha Filhos" data-desc="Corrente veneziana banhada a ouro com pingente delicado de menina cravejado com micro-zircônias brilhantes." data-img="assets/images/3.jpg">
+            <div class="cat-image-box">
+              <img src="assets/images/3.jpg" alt="Colar Pingente Menina Cravejado de Zircônias" class="cat-real-img" loading="lazy">
+              <span class="cat-image-badge">❤️ Linha Filhos</span>
+              <div class="cat-zoom-hint">🔍 Toque para ampliar</div>
+            </div>
+            <div class="cat-content">
+              <div>
+                <span class="cat-badge">Mais Vendidos</span>
+                <h3 class="cat-title">Gargantilha Filha (Menina)</h3>
+                <p class="cat-text">Corrente veneziana banhada a ouro com pingente delicado cravejado de zircônias.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Item 5: Rings & Bracelets 5.jpg -->
-        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="500">
-          <div class="cat-image-box">
-            <img src="assets/images/5.jpg" alt="Anéis cravejados, brincos gota e pulseiras em ouro" class="cat-real-img" loading="lazy">
-            <span class="cat-image-badge">👑 Linha Glamour</span>
-          </div>
-          <div class="cat-content">
-            <div>
-              <span class="cat-badge">Elegância Pura</span>
-              <h3 class="cat-title">Anel Pavé & Brinco Gota</h3>
-              <p class="cat-text">Anel regulável anatômico com pavê de zircônias, brinco gota espelhada e bracelete com elos encorpados.</p>
+          <!-- Item 4: Boy Pendant 6.jpg -->
+          <div class="catalog-card catalog-slide" data-index="3" data-title="Gargantilha Filho (Menino)" data-badge="Linha Filhos" data-desc="Pingente de menino cravejado em pedrarias lapidadas, perfeito para mães apaixonadas. Alto giro de vendas." data-img="assets/images/6.jpg">
+            <div class="cat-image-box">
+              <img src="assets/images/6.jpg" alt="Colar Pingente Menino Cravejado de Zircônias" class="cat-real-img" loading="lazy">
+              <span class="cat-image-badge">💙 Linha Filhos</span>
+              <div class="cat-zoom-hint">🔍 Toque para ampliar</div>
+            </div>
+            <div class="cat-content">
+              <div>
+                <span class="cat-badge">Mais Vendidos</span>
+                <h3 class="cat-title">Gargantilha Filho (Menino)</h3>
+                <p class="cat-text">Pingente de menino cravejado em pedrarias lapidadas, perfeito para mães apaixonadas.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Item 6: Campaign Box 7.jpg -->
-        <div class="catalog-card tilt-card" data-reveal="fade-up" data-delay="600">
-          <div class="cat-image-box">
-            <img src="assets/images/7.jpg" alt="Caixa e fita personalizada da Atual Semijoias" class="cat-real-img" loading="lazy">
-            <span class="cat-image-badge">🎁 Embalagem Luxo</span>
-          </div>
-          <div class="cat-content">
-            <div>
-              <span class="cat-badge">Apresentação Impecável</span>
-              <h3 class="cat-title">Experiência Completa</h3>
-              <p class="cat-text">Cada peça acompanha o padrão de embalagem, tags de garantia e fita personalizada que valorizam ainda mais a sua revenda.</p>
+          <!-- Item 5: Rings & Bracelets 5.jpg -->
+          <div class="catalog-card catalog-slide" data-index="4" data-title="Anel Pavé & Brinco Gota" data-badge="Linha Glamour" data-desc="Anel regulável anatômico com pavê de zircônias, brinco gota espelhada e bracelete com elos encorpados." data-img="assets/images/5.jpg">
+            <div class="cat-image-box">
+              <img src="assets/images/5.jpg" alt="Anéis cravejados, brincos gota e pulseiras em ouro" class="cat-real-img" loading="lazy">
+              <span class="cat-image-badge">👑 Linha Glamour</span>
+              <div class="cat-zoom-hint">🔍 Toque para ampliar</div>
+            </div>
+            <div class="cat-content">
+              <div>
+                <span class="cat-badge">Elegância Pura</span>
+                <h3 class="cat-title">Anel Pavé & Brinco Gota</h3>
+                <p class="cat-text">Anel regulável anatômico com pavê de zircônias e brinco gota espelhada.</p>
+              </div>
             </div>
           </div>
+
+          <!-- Item 6: Campaign Box 7.jpg -->
+          <div class="catalog-card catalog-slide" data-index="5" data-title="Embalagem e Fita Personalizada" data-badge="Experiência Completa" data-desc="Cada peça acompanha o padrão de embalagem, tags de garantia e fita personalizada que valorizam ainda mais a sua revenda." data-img="assets/images/7.jpg">
+            <div class="cat-image-box">
+              <img src="assets/images/7.jpg" alt="Caixa e fita personalizada da Atual Semijoias" class="cat-real-img" loading="lazy">
+              <span class="cat-image-badge">🎁 Embalagem Luxo</span>
+              <div class="cat-zoom-hint">🔍 Toque para ampliar</div>
+            </div>
+            <div class="cat-content">
+              <div>
+                <span class="cat-badge">Apresentação Impecável</span>
+                <h3 class="cat-title">Embalagem Personalizada</h3>
+                <p class="cat-text">Caixa de luxo e fita personalizada que encantam suas clientes desde a entrega.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- POSTS MODAL / LIGHTBOX VIEWER -->
+    <div class="jewelry-modal-backdrop" id="jewelryModal" aria-hidden="true">
+      <div class="jewelry-modal-card">
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar visualização">×</button>
+        
+        <div class="modal-body">
+          <div class="modal-image-wrapper">
+            <img src="" alt="" id="modalImg" class="modal-main-img">
+            <button class="modal-arrow-btn modal-prev" id="modalPrevBtn" aria-label="Foto anterior">‹</button>
+            <button class="modal-arrow-btn modal-next" id="modalNextBtn" aria-label="Próxima foto">›</button>
+          </div>
+          
+          <div class="modal-info-panel">
+            <div class="modal-header-row">
+              <span class="modal-step-counter" id="modalCounter">1 de 6</span>
+              <span class="modal-badge" id="modalBadge">Linha Pedrarias</span>
+            </div>
+            <h3 class="modal-title" id="modalTitle">Nome da Peça</h3>
+            <p class="modal-desc" id="modalDesc">Descrição da peça selecionada no mostruário.</p>
+            
+            <div class="modal-footer-cta">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block" id="modalWhatsAppCta">
+                <span>Quero Essa Peça no Meu Mostruário</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.78 14.15c-.24.67-1.39 1.29-1.93 1.37-.5.08-1.15.11-3.32-.78-2.67-1.1-4.38-3.83-4.52-4.01-.13-.18-1.07-1.42-1.07-2.71 0-1.29.68-1.92.92-2.18.24-.26.53-.33.71-.33.18 0 .35 0 .5.01.16.01.38-.06.59.45.22.53.75 1.83.82 1.97.07.14.11.31.02.5-.09.18-.14.29-.28.45-.14.16-.3.35-.43.47-.14.14-.29.29-.12.58.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.38-.24.64-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.69-.17 1.36z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- SECTION 5: SIMULADOR DE LUCRO INTERATIVO -->
     <section class="section-container" id="simulador">

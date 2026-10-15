@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTiltCards();
   initProfitCalculator();
   initFaqAccordion();
+  initCatalogCarousel();
+  initJewelryModal();
 });
 
 // 1. Sticky Navbar Effect
