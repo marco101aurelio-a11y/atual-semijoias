@@ -250,6 +250,9 @@ function initJewelryModal() {
       const msg = encodeURIComponent(`Olá! Vi a peça "${title}" no site da Atual Semijoias e gostaria de saber se ela está disponível na maleta consignada!`);
       modalCta.href = `https://wa.me/556792574305?text=${msg}`;
     }
+
+    const body = modal.querySelector('.modal-body');
+    if (body) body.scrollTop = 0;
   }
 
   function openModal(index) {
@@ -257,6 +260,8 @@ function initJewelryModal() {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    const body = modal.querySelector('.modal-body');
+    if (body) body.scrollTop = 0;
   }
 
   function closeModal() {

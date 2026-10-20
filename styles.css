@@ -101,11 +101,28 @@ body {
 
 /* Typography Helpers */
 .text-gold-gradient {
-  background: var(--gold-gradient);
+  background: linear-gradient(110deg, #f5efe6 0%, #ffffff 25%, #ffe6a3 45%, #ffffff 65%, #f5efe6 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-weight: 700;
+  animation: shineGold 5s ease-in-out infinite;
+}
+
+@keyframes shineGold {
+  0% {
+    background-position: 0% center;
+    filter: drop-shadow(0 0 0px rgba(245, 239, 230, 0));
+  }
+  50% {
+    background-position: 100% center;
+    filter: drop-shadow(0 0 8px rgba(245, 239, 230, 0.4));
+  }
+  100% {
+    background-position: 200% center;
+    filter: drop-shadow(0 0 0px rgba(245, 239, 230, 0));
+  }
 }
 
 /* Buttons */
@@ -222,6 +239,7 @@ body {
 .badge-pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: rgba(245, 239, 230, 0.10);
   border: 1px solid var(--border-gold);
@@ -232,6 +250,7 @@ body {
   color: var(--gold-light);
   backdrop-filter: blur(10px);
   margin-bottom: 1.2rem;
+  white-space: nowrap;
 }
 
 /* ============================================================
@@ -398,11 +417,13 @@ body {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 3.3rem;
+  font-size: 2.7rem;
   line-height: 1.18;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.5px;
 }
 
 .hero-description {
@@ -1705,19 +1726,20 @@ body {
   }
 
   .badge-pill {
-    max-width: 100%;
-    white-space: normal;
+    max-width: 96%;
+    white-space: nowrap;
     text-align: center;
-    font-size: 0.78rem;
-    padding: 6px 14px;
-    line-height: 1.4;
+    font-size: 0.74rem;
+    padding: 6px 12px;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
   }
 
   .hero-title {
-    font-size: 1.85rem;
-    line-height: 1.25;
+    font-size: 1.4rem;
+    line-height: 1.22;
     word-break: break-word;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.1rem;
   }
 
   .hero-description {
@@ -1863,60 +1885,91 @@ body {
   }
 
   .footer {
-    padding: 36px 16px 20px;
+    padding: 28px 16px 18px;
   }
 
   .footer-container {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    margin-bottom: 25px;
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 14px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 14px;
+    margin-bottom: 4px;
   }
 
   .footer-brand {
-    justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
 
   .footer-bio {
-    font-size: 0.84rem;
-    margin-bottom: 14px;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
+    display: none;
   }
 
   .footer-socials {
-    justify-content: center;
+    margin-top: 0;
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 36px;
+    height: 36px;
   }
 
   .f-title {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold-light);
   }
 
   .f-list {
-    gap: 8px;
+    gap: 6px;
   }
 
   .f-list a {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .footer-contact-col {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-top: 6px;
+  }
+
+  .footer-contact-col .f-title {
+    margin-bottom: 6px;
+    font-size: 0.82rem;
   }
 
   .f-contact-item {
-    font-size: 0.84rem;
-    margin-bottom: 6px;
+    font-size: 0.80rem;
+    margin-bottom: 3px;
+    line-height: 1.4;
   }
 
   .footer-bottom {
-    padding-top: 16px;
+    padding-top: 14px;
   }
 
   .footer-bottom-container {
     flex-direction: column;
     text-align: center;
-    gap: 8px;
-    font-size: 0.78rem;
+    gap: 4px;
+    font-size: 0.74rem;
   }
 
   .floating-whatsapp {
@@ -1940,8 +1993,14 @@ body {
 }
 
 @media (max-width: 420px) {
+  .badge-pill {
+    font-size: 0.69rem;
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
   }
 
   .hero-section {
@@ -2066,17 +2125,19 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(14, 19, 27, 0.88);
+  background: rgba(10, 14, 22, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.3s ease;
 }
 
 .jewelry-modal-backdrop.active {
@@ -2085,16 +2146,21 @@ body {
 }
 
 .jewelry-modal-card {
-  background: #202735;
+  background: #1c222e;
   border: 1.5px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  max-width: 860px;
+  max-width: 840px;
   width: 100%;
+  max-height: 90vh;
+  max-height: 90dvh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(245, 239, 230, 0.15);
-  transform: scale(0.92);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 239, 230, 0.15);
+  transform: scale(0.94);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: auto;
 }
 
 .jewelry-modal-backdrop.active .jewelry-modal-card {
@@ -2103,22 +2169,24 @@ body {
 
 .modal-close-btn {
   position: absolute;
-  top: 16px;
-  right: 18px;
-  width: 38px;
-  height: 38px;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: rgba(23, 29, 39, 0.8);
+  background: rgba(14, 19, 27, 0.85);
   border: 1px solid var(--border-gold);
   color: #ffffff;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 30;
   transition: var(--transition);
   line-height: 1;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .modal-close-btn:hover {
@@ -2130,15 +2198,18 @@ body {
 .modal-body {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
+  height: 100%;
+  overflow: hidden;
 }
 
 .modal-image-wrapper {
   position: relative;
-  background: #000000;
-  min-height: 420px;
+  background: #090d14;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .modal-main-img {
@@ -2153,10 +2224,10 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(23, 29, 39, 0.75);
+  background: rgba(14, 19, 27, 0.85);
   border: 1px solid var(--border-gold);
   color: #ffffff;
   font-size: 1.8rem;
@@ -2167,28 +2238,30 @@ body {
   transition: var(--transition);
   line-height: 1;
   backdrop-filter: blur(8px);
+  z-index: 15;
 }
 
 .modal-prev {
-  left: 14px;
+  left: 12px;
 }
 
 .modal-next {
-  right: 14px;
+  right: 12px;
 }
 
 .modal-arrow-btn:hover {
   background: #f5efe6;
   color: #171d27;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.08);
 }
 
 .modal-info-panel {
-  padding: 40px 32px;
+  padding: 36px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #202735;
+  background: #1c222e;
+  overflow-y: auto;
 }
 
 .modal-header-row {
@@ -2217,9 +2290,9 @@ body {
 
 .modal-title {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   color: #ffffff;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   line-height: 1.25;
 }
 
@@ -2252,15 +2325,90 @@ body {
     padding-right: 16px;
   }
 
+  .jewelry-modal-backdrop {
+    padding: 12px;
+  }
+
+  .jewelry-modal-card {
+    max-height: 86vh;
+    max-height: 86dvh;
+    border-radius: 16px;
+  }
+
   .modal-body {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
   .modal-image-wrapper {
-    min-height: 280px;
+    min-height: auto;
+    height: 230px;
+    max-height: 33vh;
+    flex-shrink: 0;
+  }
+
+  .modal-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    font-size: 1.35rem;
+  }
+
+  .modal-arrow-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
   }
 
   .modal-info-panel {
-    padding: 24px 20px;
+    padding: 16px 16px 18px;
+    gap: 8px;
+    flex: 1 1 auto;
+    overflow-y: visible;
+  }
+
+  .modal-header-row {
+    margin-bottom: 6px;
+  }
+
+  .modal-step-counter {
+    font-size: 0.75rem;
+  }
+
+  .modal-badge {
+    font-size: 0.70rem;
+    padding: 3px 10px;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+
+  .modal-desc {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .modal-footer-cta {
+    margin-top: auto;
+  }
+
+  .modal-footer-cta .btn {
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    width: 100%;
   }
 }
