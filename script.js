@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollReveal();
   initTiltCards();
-  initProfitCalculator();
   initFaqAccordion();
   initCatalogCarousel();
   initJewelryModal();
@@ -99,41 +98,6 @@ function initTiltCards() {
       });
     });
   }
-}
-
-// 5. Interactive Profit Calculator
-function initProfitCalculator() {
-  const slider = document.getElementById('piecesSlider');
-  const valDisplay = document.getElementById('sliderValDisplay');
-  const monthlyDisplay = document.getElementById('monthlyProfitDisplay');
-  const ctaBtn = document.getElementById('calcCtaBtn');
-
-  if (!slider || !valDisplay || !monthlyDisplay) return;
-
-  const averageTicket = 110.0;
-  const commissionRate = 0.40;
-  const weeksPerMonth = 4.0;
-
-  function update() {
-    const piecesPerWeek = parseInt(slider.value, 10);
-    valDisplay.textContent = `${piecesPerWeek} ${piecesPerWeek === 1 ? 'peça/sem' : 'peças/sem'}`;
-
-    const monthlySales = piecesPerWeek * weeksPerMonth * averageTicket;
-    const monthlyProfit = monthlySales * commissionRate;
-
-    monthlyDisplay.textContent = monthlyProfit.toLocaleString('pt-BR', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-
-    if (ctaBtn) {
-      const msg = encodeURIComponent(`Olá! Fiz a simulação de ${piecesPerWeek} peças por semana no site da Atual Semijoias (lucro estimado de R$ ${monthlyProfit.toFixed(2)}) e quero garantir minha maleta consignada!`);
-      ctaBtn.href = `https://wa.me/556792574305?text=${msg}`;
-    }
-  }
-
-  slider.addEventListener('input', update);
-  update();
 }
 
 // 6. FAQ Accordion

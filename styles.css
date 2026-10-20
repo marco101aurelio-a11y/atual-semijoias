@@ -963,6 +963,9 @@ body {
   font-weight: 700;
   color: var(--gold-light);
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .cat-content {
@@ -1801,8 +1804,25 @@ body {
   }
 
   .steps-flow {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 380px;
+    margin: 0 auto 35px;
+    width: 100%;
+  }
+
+  .step-card {
+    padding: 24px 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-icon {
+    margin: 8px 0 12px;
+    color: var(--gold-light);
   }
 
   .cards-grid {
@@ -1814,59 +1834,27 @@ body {
     padding: 24px 20px;
   }
 
-  .calculator-wrapper {
-    padding: 24px 16px;
-  }
-
-  .calc-title {
-    font-size: 1.65rem;
-  }
-
-  .ticket-info {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .res-amount {
-    font-size: 2.1rem;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .testimonial-card {
-    padding: 22px 18px;
-  }
-
-  .instagram-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 16px;
-    gap: 16px;
-  }
-
-  .insta-left {
-    flex-direction: column;
-  }
-
   .final-cta-section {
-    padding: 40px 16px 70px;
+    padding: 36px 16px 60px;
   }
 
   .final-cta-card {
-    padding: 36px 16px;
+    padding: 32px 16px;
   }
 
   .final-title {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
     line-height: 1.25;
   }
 
   .final-desc {
-    font-size: 0.95rem;
-    margin-bottom: 24px;
+    font-size: 0.92rem;
+    margin-bottom: 22px;
+  }
+
+  .final-trust {
+    gap: 8px;
+    font-size: 0.8rem;
   }
 
   .final-cta-card .btn {
@@ -1875,19 +1863,60 @@ body {
   }
 
   .footer {
-    padding: 50px 16px 25px;
+    padding: 36px 16px 20px;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-bio {
+    font-size: 0.84rem;
+    margin-bottom: 14px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .f-title {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .f-list {
+    gap: 8px;
+  }
+
+  .f-list a {
+    font-size: 0.85rem;
+  }
+
+  .f-contact-item {
+    font-size: 0.84rem;
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    padding-top: 16px;
   }
 
   .footer-bottom-container {
     flex-direction: column;
     text-align: center;
-    gap: 12px;
+    gap: 8px;
+    font-size: 0.78rem;
   }
 
   .floating-whatsapp {
@@ -2020,6 +2049,9 @@ body {
   opacity: 0;
   transition: var(--transition);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .catalog-card:hover .cat-zoom-hint {
@@ -2210,7 +2242,14 @@ body {
 
 @media (max-width: 768px) {
   .catalog-slide {
-    flex: 0 0 85%;
+    flex: 0 0 88%;
+    min-width: 0;
+    max-width: 88%;
+  }
+
+  .catalog-carousel-container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .modal-body {
